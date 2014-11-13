@@ -142,16 +142,28 @@ $(document).ready(function() {
 	 */
 
 	// Click on rushee in rushees page -> redirect to correct rushee
-	$('div.masonry-rushee').click(function() {
+	$('#Rushees div.masonry-rushee').click(function() {
 		var rushee = $(this)
 		redirectToRushee(rushee);
 	});
+
+	// Click on rushee in stats page -> redirect to correct rushee
+	$('#Stats div.rushee-list').click(function() {
+		var rushee = $(this)
+		redirectToRushee(rushee);
+	});
+
+	//Add number to bids given on stats page
+	$('#stats-list').imagesLoaded(function() {
+		$('#bidtitle').text($('#bidtitle').text() + ' (' + $('#bidlist .rushee-list').length + ')');
+	});
+
 	$('li.news-item').click(function() {
 		console.log($(this).find('a').html());
 		window.location = $(this).find('a').html();
 	});
 	// Images load -> initiate masonry
-	$('#masonry-container').imagesLoaded(function() {
+	$('div#Rushees #masonry-container').imagesLoaded(function() {
 		var container = $('#masonry-container');
 		var item = '.masonry-rushee';
 		var gutters = 25;
