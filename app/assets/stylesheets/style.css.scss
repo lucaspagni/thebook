@@ -483,13 +483,12 @@ main#Stats {
 
 	section#stats-list {
 
-		div#masonry-container {
+		div#masonry-stats-container {
 			margin-top: 20px;
 
-			div.masonry-rushee {
-			margin-bottom: 25px;
-			width: 300px;
-			height: auto;	
+			div.masonry-stats-rushee {
+				margin-bottom: 25px;
+				width: 300px;
 			}
 
 			div.rushee-list {
@@ -500,55 +499,24 @@ main#Stats {
 				border-radius: 4px;
 				cursor: pointer;
 				overflow: auto;
-				// display: table;
-
-				div.rushee-status {
-					position: absolute;
-					top: 0;
-					left: 0;
-					width: 100%;
-					height: 40px;
-					text-align: center;
-					line-height: 40px;
-					color: #fff;
-					border-radius: 3px 3px 0 0;
-				}
-				div.rushee-status.bid-dropped { background-color: rgba(16, 143, 57, 0.7); }
-				div.rushee-status.bid-offered { background-color: rgba(87, 149, 255, 0.7); }
-				div.rushee-status.bid-tabled { background-color: rgba(222, 204, 16, 0.7); }
-				div.rushee-status.bid-refused { background-color: rgba(255, 104, 19, 0.7); }
-				div.rushee-status.rip-corded { background-color: rgba(217, 40, 18, 0.7); }
-				div.rushee-legacy {
-					position: absolute;
-					bottom: 0;
-					right: 20px;
-					width: 20px;
-					background-color: #fff;
-				}
+				
 				div.rushee-image-wrapper {
 					width: 60px;
-					height: 60px;
+					max-height: 60px;
 					overflow: hidden;
 					float: left;
 					position: relative;
 
 					img {
-						width: 100%;
+						width: 60px;
 						display: block;
-					    min-width: 100%;
-					    min-height: 100%;
 					    margin: auto;
-					    position: absolute;
-					    top: -100%;
-					    right: -100%;
-					    bottom: -100%;
-					    left: -100%;
 						border-radius: 4px 0 0 4px;
 					}
 				}
 				div.rushee-info {
 					height: 100%;
-					width: 100%;
+					width: calc(100% - 90px);
 					display: table-cell;
 					vertical-align: middle;
 
@@ -582,39 +550,6 @@ main#Stats {
 					span:last-child {
 						border: none;
 					}
-				}
-			}
-			> div.list-rushee:hover {
-				opacity: 0.7;
-				-webkit-transition: 0.5s;
-				-moz-transition: 0.5s;
-				-o-transition: 0.5s;
-				transition: 0.5s;	
-			}
-		}
-	}
-	@media(min-width: 321px) {
-		section#stats-list {
-
-			div#list-container {
-
-				> div.list-rushee {
-					width: 100%;
-
-					img {
-						
-					}
-				}
-			}
-		}
-	}
-	@media(min-width: 481px) {
-		section#stats-list {
-
-			div#list-container {
-
-				> div.list-rushee {
-					width: 300px;
 				}
 			}
 		}

@@ -146,18 +146,17 @@ $(document).ready(function() {
 		var rushee = $(this)
 		redirectToRushee(rushee);
 	});
-
 	// Click on rushee in stats page -> redirect to correct rushee
 	$('#Stats div.rushee-list').click(function() {
 		var rushee = $(this)
 		redirectToRushee(rushee);
 	});
-
 	//Add number to bids given on stats page
 	$('#stats-list').imagesLoaded(function() {
+
 		$('#bidtitle').text($('#bidtitle').text() + ' (' + $('#bidlist .rushee-list').length + ')');
 	});
-
+	// Route to correct rushees from news feed
 	$('li.news-item').click(function() {
 		console.log($(this).find('a').html());
 		window.location = $(this).find('a').html();
@@ -245,10 +244,17 @@ $(document).ready(function() {
 		// placeholder for minimize
 		toggleMobileNavbar();
 	});
+	// Correctly route to rushees
 	$('ul.rushee-stats li:first-child').click(function() {
 
 		var address = $(this).find('a').attr('href');
 		window.location.replace(address);
 	});
+	// $('div#Rushees #masonry-container').imagesLoaded(function() {
+	// 	var container = $('#masonry-container');
+	// 	var item = '.masonry-rushee';
+	// 	var gutters = 25;
+	// 	initiateMasonry(container, item, gutters)
+	// });
 
 });
