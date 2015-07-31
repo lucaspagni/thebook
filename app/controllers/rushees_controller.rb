@@ -2,6 +2,11 @@ class RusheesController < ApplicationController
   before_action :signed_in
   before_action :correct_user, only: [:edit, :update, :destroy]
   before_action :admin, only: [:offered, :unoffered, :dropped, :undropped, :tabled, :untabled, :rejected, :unrejected]
+  before_action :comments_ready, only: [:index, :recent, :top, :views, :comments]
+
+  def leaderboard
+    @rushees = Rushee.all.order(:cached_votes_total => :desc)
+  end
 
   def stats
     @rushees = Rushee.all.shuffle
@@ -15,7 +20,6 @@ class RusheesController < ApplicationController
 
   def recent
     @rushees = Rushee.all.order("created_at DESC")
-    @comments = Comment.all.order("created_at DESC")
   end
 
   def top
@@ -37,11 +41,10 @@ class RusheesController < ApplicationController
 
   def new
     @rushee = current_user.rushees.build
-    flash[:notice] = "Rushee successfully added"
   end
 
   def edit
-     @rushee = Rushee.find(params[:id])
+    @rushee = Rushee.find(params[:id])
   end
 
   def offered
@@ -178,6 +181,10 @@ class RusheesController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
+
+    def comments_ready
+      @comments = Comment.all.order("created_at DESC")
+    end
 
     def signed_in
       redirect_to root_path, notice: "Please log in to view page" unless current_user
