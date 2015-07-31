@@ -34,6 +34,7 @@ Rails.application.routes.draw do
   get "recent" => "rushees#recent"
   get "views" => "rushees#views"
   get "comments" => "rushees#comments"
+  get "leaderboard" => "rushees#leaderboard"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

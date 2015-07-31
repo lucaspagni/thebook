@@ -1,0 +1,53 @@
+<main id="Leaderboard">
+	<section id="leaderboard-list">
+	
+	<h1>Leaderboard</h1>
+
+		<div id="Container">
+
+			<% @rushees.each_with_index do |rushee, index| %>
+				<div id="rusheebox">
+					<div id="number">
+						<span><%= index + 1 %></span>
+					</div>
+
+					<div id="photo">
+						<%= image_tag rushee.image.url(:thumb) %>
+					</div>
+
+					<div id="rusheetext">
+						
+						<h3 id="rusheename"><%= link_to rushee.name, rushee_path(rushee) %> </h3>
+						
+						<div id="bio">
+							<h4 id="rusheebio"><%= rushee.bio %></h4>
+						</div>
+						
+						<div class="rusheestats">
+
+	                        <% if rushee.votes_for.size == 1 %>
+	                            <span>1 like</span>
+	                        <% else %>
+	                            <span><%= rushee.votes_for.size %> likes •</span>
+	                        <% end %>
+	                        
+	                        <% if rushee.comments_count == 1 %>
+	                            <span>1 comment</span>
+	                        <% else %>
+	                            <span><%= rushee.comments_count %> comments •</span>
+	                        <% end %>
+
+	                        <% if rushee.impressionist_count == 1 %>
+	                            <span>1 view</span>
+	                        <% else %>
+	                            <span><%= rushee.impressionist_count %> views</span>
+	                        <% end %>
+	                    </div>
+					</div>
+				</div>
+				<div id="rusheeborder"></div> <!-- Rushee block border -->
+			<% end %>
+		</div>
+
+	</section>
+</main>

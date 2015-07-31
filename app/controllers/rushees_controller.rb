@@ -4,6 +4,10 @@ class RusheesController < ApplicationController
   before_action :admin, only: [:offered, :unoffered, :dropped, :undropped, :tabled, :untabled, :rejected, :unrejected]
   before_action :comments_ready, only: [:index, :recent, :top, :views, :comments]
 
+  def leaderboard
+    @rushees = Rushee.all.order(:cached_votes_total => :desc)
+  end
+
   def stats
     @rushees = Rushee.all.shuffle
     @rushees_likes = Rushee.all.order(:cached_votes_total => :desc)

@@ -6,10 +6,14 @@
 	font-family: "Font-Awesome";
 	src: url(/fonts/Font-Awesome/fonts/FontAwesome.otf);
 }
+@font-face {
+	font-family: "Century Gothic";
+	src: url(/fonts/Century-Gothic/century-gothic.ttf);
+}
 
 $font-stack: Arial, Helvetica, sans-serif;
-$primary-color: #001e33;//#002640;// #003050;
-$secondary-color: #edb700;
+$primary-color: #9B9B9B;//#002640;// #003050;
+$secondary-color: #115072;
 $facebook-color: #3b5998;
 $h1-color: $secondary-color;
 $h2-color: $secondary-color;
@@ -52,7 +56,7 @@ html {
 	// background-image: -webkit-gradient(linear, left top, right bottom, color-stop(0, #001E33), color-stop(1, #003752));
 	// background-image: -webkit-linear-gradient(top left, #001E33 0%, #003752 100%);
 	// background-image: linear-gradient(to bottom right, #001E33 0%, #003752 100%);
-	background-color: #003752;
+	background-color: #FFFFFF;
 	background-attachment: fixed;
 
 	body {
@@ -129,7 +133,7 @@ header {
 		> a {
 			float: left;
 			color: $primary-color;
-			font-family: "Nevis";
+			font-family: "Century Gothic";
 			text-decoration: none;
 		}
 		i {
@@ -141,6 +145,7 @@ header {
 			margin-top: 30px;
 
 			ul {
+				font-family: "Century Gothic";
 				float: right;
 				text-align: right;
 
@@ -1524,3 +1529,119 @@ main#Edit-Rushee {
 		}
 	}
 }
+/* Rushee leaderboard */
+main#Leaderboard {
+	section {
+		
+		h1 {
+			font-family: "Century Gothic";
+			font-weight: normal;
+			text-shadow: none;
+		}
+		
+		div#Container {
+			width: calc(100% - 5px);
+			margin: 0 auto;
+			height: 600px;
+			border: none;
+			box-shadow: 0 0 10px #ccc;
+
+			div#rusheebox {
+				width: 100%;
+				height: 100px;
+				position: relative;
+				padding-top: 12px;
+				padding-bottom: 12px;
+
+				:hover {
+					background-color: $primary-color;
+				}
+
+				div#number {
+					width: 7%;
+					height: 100%;
+					display: block;
+					padding-top: 32px;
+					text-align: center;
+					vertical-align: middle;
+
+					span {
+						font-size: 30px;
+						font-family: "Century Gothic";
+						color: $primary-color;
+					}
+				}
+
+				div#photo {
+					position: absolute;
+					top: 0;
+					left: 7%;
+					width: 9%;
+					padding-top: 12px;
+					border: none;
+					background-color: none; //#EBEBEB;
+
+					img {
+						display: block;
+						margin-left: auto;
+						margin-right: auto;
+					}
+
+				}
+
+				div#rusheetext {
+					background-color: white;
+					position: absolute;
+					top: 0;
+					left: 17%;
+					height: 100%;
+					width: 70%;
+					padding-top: 25px;
+
+					h3#rusheename {
+						font-family: "Century Gothic";
+						
+						a {
+							text-decoration: none;
+							color: #115072;
+						}	
+					}
+					div#bio{
+						padding-top: 2px;
+
+						h4#rusheebio {
+							font-size: 10px;
+							font-family: "Century Gothic";
+							color: $primary-color;
+							text-decoration: none;
+						}
+					}	
+
+					div.rusheestats {
+						padding-top: 1px;
+
+						span {
+							font-size: 12px;
+							font-family: "Century Gothic";
+							color: $secondary-color;
+						}
+					}
+				}
+
+			}
+
+			div#rusheeborder {
+					content:""; 
+					background-color: $primary-color; 
+					position: relative; 
+					bottom: 0; 
+					left: 5%; 
+					width: 87%; 
+					height: 1px;
+			}
+
+		}	
+	}
+
+}
+
