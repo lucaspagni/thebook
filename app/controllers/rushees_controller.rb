@@ -153,10 +153,10 @@ class RusheesController < ApplicationController
   def vote
     @rushee = Rushee.find(params[:id])
     @rushee.liked_by current_user
-    respond_to do |format|
-      format.html {redirect_to :back }
-      format.json { render json: { count: @rushee.votes_for.size } }
-    end
+    # respond_to do |format|
+    #   format.html {redirect_to :back }
+    #   format.json { render json: { count: @rushee.votes_for.size } }
+    # end
   end
 
   def unvote
