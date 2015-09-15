@@ -6,10 +6,14 @@
 	font-family: "Font-Awesome";
 	src: url(/fonts/Font-Awesome/fonts/FontAwesome.otf);
 }
+@font-face {
+	font-family: "Century Gothic";
+	src: url(/fonts/Century-Gothic/century-gothic.ttf);
+}
 
 $font-stack: Arial, Helvetica, sans-serif;
-$primary-color: #001e33;//#002640;// #003050;
-$secondary-color: #edb700;
+$primary-color: #9B9B9B;//#002640;// #003050;
+$secondary-color: #115072;
 $facebook-color: #3b5998;
 $h1-color: $secondary-color;
 $h2-color: $secondary-color;
@@ -52,7 +56,7 @@ html {
 	// background-image: -webkit-gradient(linear, left top, right bottom, color-stop(0, #001E33), color-stop(1, #003752));
 	// background-image: -webkit-linear-gradient(top left, #001E33 0%, #003752 100%);
 	// background-image: linear-gradient(to bottom right, #001E33 0%, #003752 100%);
-	background-color: #003752;
+	background-color: #FFFFFF;
 	background-attachment: fixed;
 
 	body {
@@ -129,7 +133,7 @@ header {
 		> a {
 			float: left;
 			color: $primary-color;
-			font-family: "Nevis";
+			font-family: "Century Gothic";
 			text-decoration: none;
 		}
 		i {
@@ -141,6 +145,7 @@ header {
 			margin-top: 30px;
 
 			ul {
+				font-family: "Century Gothic";
 				float: right;
 				text-align: right;
 
@@ -412,23 +417,24 @@ main#Rushees {
 
 		section#rushees-list {
 			float: left;
-			width: calc(100% - 250px - 50px - 25px);
+			width: calc(100% - 280px - 50px - 25px);
 		}
 		section#rushees-news {
+			position: fixed;
+			right:0;
 			display: block;
 			float: right;
 			margin-top: -22px;
-			width: 250px;
 			overflow-y: scroll;
 
 			ul.rushees-news-list {
-				width: 100%;
+				width: 280px;
 				list-style: none;
 
 				li.news-item {
 					width: 100%;
-					height: 75px;
-					background-color: #e5e5e5;
+					height: 80px;
+					background-color: #e7e7e7;
 					border-bottom: 1px solid #aaa;
 					cursor: pointer;
 
@@ -438,8 +444,8 @@ main#Rushees {
 					div.news-comment-image-wrapper {
 						display: inline-block;
 						overflow: hidden;
-						width: 75px;
-						height: 75px;
+						width: 80px;
+						height: 80px;
 
 						> img.portrait {
 							width: 100%;
@@ -456,18 +462,19 @@ main#Rushees {
 						margin-left: 10px;
 						vertical-align: top;
 						text-align: left;
-						width: calc(100% - 80px - 10px);
+						width: calc(100% - 85px - 10px);
+						overflow: hidden;
 
 						span {
 							color: #333;
 						}
 						span.news-commenter {
-							font-size: 15px;
+							font-size: 13px;
 							font-weight: bold;
 						}
 						span.news-comment-text {
 							text-align: right;
-							font-size: 14px;
+							font-size: 12px;
 						}
 					}
 				}
@@ -476,7 +483,101 @@ main#Rushees {
 	}
 }
 
+/* Stats page */
+main#Stats {
 
+	section#stats-list {
+
+		div#masonry-stats-container {
+			margin-top: 20px;
+
+			div.masonry-stats-rushee {
+				margin-bottom: 25px;
+				width: 300px;
+			}
+
+			div.rushee-list {
+				margin-bottom: 10px;
+				margin-top: 10px;
+				width: 300px;
+				background-color: #fff;
+				border-radius: 4px;
+				cursor: pointer;
+				overflow: auto;
+				
+				div.rushee-image-wrapper {
+					width: 60px;
+					max-height: 60px;
+					overflow: hidden;
+					float: left;
+
+					img {
+						display: inline-block;
+						width: 60px;
+						display: block;
+					    margin: auto;
+						border-radius: 4px 0 0 4px;
+					}
+					img.portrait {
+						width: 100%;
+					}
+
+					img.landscape {
+						height: 100%;
+					}
+				}
+				div.rushee-info {
+					height: 100%;
+					width: calc(100% - 90px);
+					display: table-cell;
+					vertical-align: middle;
+
+					h2 {
+						padding: 10px;
+						width: 100%;
+						text-shadow: none;
+
+						a {
+							color: $primary-color;
+							font-size: 14px;
+							text-decoration: none;
+						}
+					}
+				}
+				div.rushee-stats {
+					width: 100%;
+					background-color: #222;
+					border-radius: 0 0 2px 2px;
+
+					span {
+						display: inline-block;
+						padding: 10px 0;
+						width: calc(33% - 8px);
+						color: #91949d;
+						font-size: 12px;
+						text-align: center;
+						border: 1px solid #444;
+						border-style: none solid none none;
+					}
+					span:last-child {
+						border: none;
+					}
+				}
+			}
+		}
+	}
+	@media(min-width: 800px) {
+		margin: 0 0 0 50px;
+		padding-bottom: 0;
+		width: calc(100% - 50px);
+		max-width: none;
+
+		section#stats-list {
+			float: left;
+			width: calc(100% - 100px);
+		}
+	}
+}
 
 /* Rushee page */
 main#Rushee {
@@ -790,7 +891,6 @@ main#Rushee {
 					}
 				}
 			}
-
 		}
 	}
 	section.rushee-comments {
@@ -1436,3 +1536,119 @@ main#Edit-Rushee {
 		}
 	}
 }
+/* Rushee leaderboard */
+main#Leaderboard {
+	section {
+		
+		h1 {
+			font-family: "Century Gothic";
+			font-weight: normal;
+			text-shadow: none;
+		}
+		
+		div#Container {
+			width: calc(100% - 5px);
+			margin: 0 auto;
+			height: 600px;
+			border: none;
+			box-shadow: 0 0 10px #ccc;
+
+			div#rusheebox {
+				width: 100%;
+				height: 100px;
+				position: relative;
+				padding-top: 12px;
+				padding-bottom: 12px;
+
+				:hover {
+					background-color: $primary-color;
+				}
+
+				div#number {
+					width: 7%;
+					height: 100%;
+					display: block;
+					padding-top: 32px;
+					text-align: center;
+					vertical-align: middle;
+
+					span {
+						font-size: 30px;
+						font-family: "Century Gothic";
+						color: $primary-color;
+					}
+				}
+
+				div#photo {
+					position: absolute;
+					top: 0;
+					left: 7%;
+					width: 9%;
+					padding-top: 12px;
+					border: none;
+					background-color: none; //#EBEBEB;
+
+					img {
+						display: block;
+						margin-left: auto;
+						margin-right: auto;
+					}
+
+				}
+
+				div#rusheetext {
+					background-color: white;
+					position: absolute;
+					top: 0;
+					left: 17%;
+					height: 100%;
+					width: 70%;
+					padding-top: 25px;
+
+					h3#rusheename {
+						font-family: "Century Gothic";
+						
+						a {
+							text-decoration: none;
+							color: #115072;
+						}	
+					}
+					div#bio{
+						padding-top: 2px;
+
+						h4#rusheebio {
+							font-size: 10px;
+							font-family: "Century Gothic";
+							color: $primary-color;
+							text-decoration: none;
+						}
+					}	
+
+					div.rusheestats {
+						padding-top: 1px;
+
+						span {
+							font-size: 12px;
+							font-family: "Century Gothic";
+							color: $secondary-color;
+						}
+					}
+				}
+
+			}
+
+			div#rusheeborder {
+					content:""; 
+					background-color: $primary-color; 
+					position: relative; 
+					bottom: 0; 
+					left: 5%; 
+					width: 87%; 
+					height: 1px;
+			}
+
+		}	
+	}
+
+}
+

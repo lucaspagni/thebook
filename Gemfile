@@ -21,16 +21,16 @@ gem 'aws-sdk', '~> 1.5.7'
 
 
 
-group :development, :test do
-	gem 'sqlite3'
-	gem 'spring'
-end
+# group :development, :test do
+# 	gem 'sqlite3'
+# 	gem 'spring'
+# end
 
-group :production do
-	gem 'pg'
-	gem 'rails_12factor'
-end
+# group :production do
+# 	gem 'pg'
+# 	gem 'rails_12factor'
+# end
 
-group :doc do
-	gem 'sdoc', require: false         
-end
+# group :doc do
+# 	gem 'sdoc', require: false         
+# end

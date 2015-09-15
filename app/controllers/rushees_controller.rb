@@ -13,7 +13,7 @@ class RusheesController < ApplicationController
     @comments = Comment.all.order("created_at DESC")
   end
 
-  def top
+  def leaderboard
     @rushees = Rushee.all.order(:cached_votes_total => :desc)
   end
 

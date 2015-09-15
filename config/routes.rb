@@ -28,7 +28,7 @@ Rails.application.routes.draw do
   match 'signout', to: 'sessions#destroy', as: 'signout', via: [:get, :post]
 
   root "pages#home"
-  get "top" => "rushees#top"
+  get "leaderboard" => "rushees#leaderboard"
   get "recent" => "rushees#recent"
   get "views" => "rushees#views"
   get "comments" => "rushees#comments"
