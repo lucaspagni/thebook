@@ -2,8 +2,8 @@ Rails.application.routes.draw do
   
   resources :rushees do
     member do
-      put 'like', to: "rushees#vote"
-      put 'unlike', to: "rushees#unvote"
+      match 'like', to: "rushees#vote", via: [:get]
+      match 'unlike', to: "rushees#unvote", via: [:get]
       match 'offer', to: "rushees#offered", via: [:get, :post]
       match 'unoffer', to: "rushees#unoffered", via: [:get, :post]
       match 'drop', to: "rushees#dropped", via: [:get, :post]

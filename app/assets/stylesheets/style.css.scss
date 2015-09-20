@@ -1171,174 +1171,242 @@ main#Rushee {
 
 /* New rushees page */
 main#New-Rushee {
+	font-family: "Century Gothic";
 
-	section#new-rushee-form {
+	h1 {
+			font-weight: normal;
+			text-shadow: none;
+			color: $secondary-color;
+		}
 
-		form {
-			margin-top: 20px;
+	div#Container {
+			width: calc(100% - 5px);
+			margin: 0 auto;
+			margin-top: 30px;
+			height: 500px;
+			border: none;
+			box-shadow: 0 0 10px #ccc;
+			overflow-x: hidden;
+  			overflow-y: hidden;
 
-			div#new-rushee-quick-info {
-				margin-bottom: 30px;
+		section#new-rushee-form {
 
-				div.new-rushee-input-item {
-					width: 100%;
+			form {
+				margin-top: 10px;
+
+				div#new-rushee-quick-info {
+					width: calc(37%);
+					margin-left: 70px;
+					margin-top: 10px;
+					margin-bottom: 30px;
+
+					//overflow: auto;
+					overflow-x: hidden;
+  					overflow-y: hidden;
+
+					div.new-rushee-input-item {
+						width: 100%;
+						position: relative;
+						margin-bottom: 10px;
+
+						i {
+						    vertical-align: middle;
+						    float: left;
+						    padding: 1px 0px;
+						    height: 10px;
+						    line-height: 56px;
+						    font-size: 22px;
+						    color: #115072;
+						    border-radius: 3px 0 0 3px;
+						}
+						input {
+							display: block;
+							margin-left: 25px;
+							padding: 8px 10px;
+							height: 18px;
+							font-size: 16px;
+							font-family: "Century Gothic";
+							border: none;
+							outline: none;
+						}
+						input#name {
+							width: 200px;
+						}
+						input#age {
+							width: 100%;
+						}
+						input#major {
+							width: 242px;
+						}
+						input#hometown {
+							width: 250px;
+						}
+						textarea {
+							text-align: left;
+							margin-top: 5px;
+							width: 235px;
+							height: 80px;
+							border: 1px solid #797979;
+							border-radius: 3px;
+							margin-left: 32px;
+							font-size: 14px;
+							resize: none;
+							outline: none;
+							font-family: "Century Gothic";
+						}
+						input#facebook-link {
+							width: 257px;
+						}
+						div.form-border {
+						  content: ''; 
+						  width: 240px; 
+						  height: 1px; 
+						  background: #797979; 
+						  position: absolute; 
+						  bottom: 5px;
+						  margin-left: 35px;
+						  margin-top: 7px;
+						}
+						span {
+							position: absolute;
+							margin-top: 16px;
+							margin-left: 34px;
+							color: #797979;
+						}
+					}
+
+					label {
+						margin-left: 32px;
+						display: block;
+						padding: 10px 0;
+						color: #797979;
+						text-shadow: none;
+
+					}
+					input#legacy {
+						display: block;
+						margin-left: 105px;
+						margin-top: -25px;
+    					position: relative;
+    					padding-left: 100px;
+					}
+				}
+
+
+				div#new-rushee-rushee-summary {
+					    float: left;
+					    overflow: auto;
+					    margin-top: 25px;
+					    padding-left: 15px;
 
 					i {
 						float: left;
-						padding: 0 5px;
-						height: 32px;
-						line-height: 32px;
-						font-size: 22px;
+						padding: 0 8px;
+						line-height: 35px;
+						font-size: 24px;
 						color: $secondary-color;
 						background-color: #fff;
 						border-radius: 3px 0 0 3px;
 					}
-					input {
+					i.fa.fa-camera {
+						padding-top: -10;
+						font-size: 22px;
+						margin-right: 10px;
+						margin-top: -5px;
+						margin-bottom: 20px;
+
+					}
+					textarea {
 						display: block;
-						margin-bottom: 10px;
-						padding: 8px 10px;
-						height: 14px;
+						margin-bottom: 30px;
+						margin-left: 5px;
+						padding: 8px 12px;
+						width: 255px;
+						height: 275px; //225
 						font-size: 12px;
-						background-color: #fff;
-						border: 1px solid #fff;
-						border-radius: 0 3px 3px 0;
+						border: 1px solid #797979;
+						border-radius: 2px;
 						outline: none;
+						resize: none;
 					}
-					input#name {
-						width: 253px;
+					label {
+						padding-left: none;
+						padding-top: 15px;
 					}
-					input#age {
-						width: 251px;
-					}
-					input#major {
-						width: 242px;
-					}
-					input#hometown {
-						width: 250px;
-					}
-					input#campus-involvement {
-						width: 248px;
-					}
-					input#facebook-link {
-						width: 257px;
+					input#rushee_image {
+						border: none;
+						width: 220px;
+						height: 20px;
+						vertical-align: middle;
+						font-size: 12px;
+						color: #fff;
 					}
 				}
-				label {
-					display: block;
-					padding: 10px 0;
-					color: $secondary-color;
-					text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
-				}
-				input#legacy {
-					display: inline-block;
-				}
-				input#legacy + span {
-					margin-left: 5px;
-					font-size: 12px;
-					color: #fff;
-				}
-				input#rushee_image {
-					border: none;
-					width: 220px;
-					height: 20px;
-					vertical-align: middle;
-					font-size: 12px;
-					color: #fff;
-				}
-			}
-			div#new-rushee-rushee-summary {
-				float: left;
-				overflow: auto;
-
-				i {
-					float: left;
-					padding: 0 8px;
-					height: 363px; //243
-					line-height: 35px;
-					font-size: 24px;
-					color: $secondary-color;
-					background-color: #fff;
-					border-radius: 3px 0 0 3px;
-				}
-				textarea {
-					display: block;
-					margin-bottom: 10px;
-					padding: 8px 10px;
-					width: 255px;
-					height: 345px; //225
-					font-size: 12px;
-					border: 1px solid #fff;
-					border-radius: 0 3px 3px 0;
-					outline: none;
-					resize: none;
-				}
-			}
-			input#new-rushee-submit {
-				display: block;
-				clear: both;
-				margin: 55px 0 0 0;
-				width: 150px;
-				height: 2.4em;
-				color: $primary-color;
-				background-color: $secondary-color;
-				border: 1px solid $secondary-color;
-				border-radius: 3px;
-				box-shadow: 0 3px 0 #333;
-			}
-		}
-	}
-	@media(min-width: 321px) {
-		section#new-rushee-form {
-
-			form {
-
-				div#new-rushee-quick-info {
-					float: left;
-					overflow: auto;
-
-					div.new-rushee-input-item {
-						width: 200px;
-
-						input#name {
-							width: 151px;
-						}
-						input#age {
-							width: 149px;
-						}
-						input#major {
-							width: 140px;
-						}
-						input#hometown {
-							width: 148px;
-						}
-						input#campus-involvement {
-							width: 146px;
-						}
-						input#facebook-link {
-							width: 155px;
-						}
-					}
-				}
-				div#new-rushee-rushee-summary {
-
-					textarea {
-						width: 189px;
-						font-size: 16px;
-					}	
+				input#new-rushee-submit {
+					clear: both;
+					margin: 0px 0 0 0;
+					width: 150px;
+					height: 2.4em;
+					color: $primary-color;
+					background-color: $secondary-color;
+					border: 1px solid $secondary-color;
+					border-radius: 3px;
 				}
 			}
 		}
-	}
-	@media(min-width: 481px) {
-		section#new-rushee-form {
+		@media(min-width: 321px) {
+			section#new-rushee-form {
 
-			form {
+				form {
 
-				div#new-rushee-rushee-summary {
+					div#new-rushee-quick-info {
+						float: left;
+						overflow: auto;
 
-					textarea {
-						width: 480px;
-					}	
+						div.new-rushee-input-item {
+							width: 200px;
+
+							input#name {
+								width: 230px;
+							}
+							input#age {
+								width: 230px;
+							}
+							input#major {
+								width: 230px;
+							}
+							input#hometown {
+								width: 230px;
+							}
+							input#campus-involvement {
+								width: 220px;
+							}
+							input#facebook-link {
+								width: 230px;
+							}
+						}
+					}
+					div#new-rushee-rushee-summary {
+
+						textarea {
+							width: 189px;
+							font-size: 16px;
+						}	
+					}
+				}
+			}
+		}
+		@media(min-width: 481px) {
+			section#new-rushee-form {
+
+				form {
+
+					div#new-rushee-rushee-summary {
+
+						textarea {
+							width: 480px;
+						}	
+					}
 				}
 			}
 		}
@@ -1553,24 +1621,28 @@ main#Leaderboard {
 			border: none;
 			box-shadow: 0 0 10px #ccc;
 
+			div#rusheeborder:last-child {
+					background-color: white;
+				}
+
 			div#rusheebox {
 				width: 100%;
 				height: 100px;
 				position: relative;
 				padding-top: 12px;
-				padding-bottom: 12px;
-
-				:hover {
-					background-color: $primary-color;
-				}
+				padding-bottom: 15px;
+				display: table;
 
 				div#number {
-					width: 7%;
+					width: 6%;
 					height: 100%;
 					display: block;
 					padding-top: 32px;
 					text-align: center;
-					vertical-align: middle;
+					vertical-align: none;
+					margin-right: 0px;
+
+					display: table-cell;
 
 					span {
 						font-size: 30px;
@@ -1579,19 +1651,27 @@ main#Leaderboard {
 					}
 				}
 
-				div#photo {
-					position: absolute;
-					top: 0;
-					left: 7%;
-					width: 9%;
-					padding-top: 12px;
-					border: none;
-					background-color: none; //#EBEBEB;
+				div.frame {
+						vertical-align: middle;
+					    height: 100px;      /* equals max image height */
+					    width: 100px;
+					    white-space: nowrap;
+
+					    display: table-cell;
+					    margin-right: 100px;
+
+
+					.helper {
+					    display: inline-block;
+					    height: 100%;
+					    vertical-align: middle;
+					}
 
 					img {
-						display: block;
-						margin-left: auto;
-						margin-right: auto;
+					    background: #3A6F9A;
+					    vertical-align: middle;
+					    max-height: 100px;
+					    max-width: 100px;
 					}
 
 				}
@@ -1603,7 +1683,8 @@ main#Leaderboard {
 					left: 17%;
 					height: 100%;
 					width: 70%;
-					padding-top: 25px;
+					padding-top: 20px;
+					padding-left: 20px;
 
 					h3#rusheename {
 						font-family: "Century Gothic";
@@ -1624,7 +1705,7 @@ main#Leaderboard {
 						}
 					}	
 
-					div.rusheestats {
+					.rusheestats {
 						padding-top: 1px;
 
 						span {

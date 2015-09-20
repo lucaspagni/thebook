@@ -11,7 +11,8 @@
 						<span><%= index + 1 %></span>
 					</div>
 
-					<div id="photo">
+					<div class="frame">
+						<span class="helper"></span>
 						<%= image_tag rushee.image.url(:thumb) %>
 					</div>
 
@@ -26,13 +27,13 @@
 						<div class="rusheestats">
 
 	                        <% if rushee.votes_for.size == 1 %>
-	                            <span>1 like</span>
+	                            <span>1 like •</span>
 	                        <% else %>
-	                            <span><%= rushee.votes_for.size %> likes •</span>
+	                            <span><%= rushee.votes_for.size %> likes •</span>
 	                        <% end %>
 	                        
 	                        <% if rushee.comments_count == 1 %>
-	                            <span>1 comment</span>
+	                            <span>1 comment •</span>
 	                        <% else %>
 	                            <span><%= rushee.comments_count %> comments •</span>
 	                        <% end %>
@@ -45,6 +46,7 @@
 	                    </div>
 					</div>
 				</div>
+
 				<div id="rusheeborder"></div> <!-- Rushee block border -->
 			<% end %>
 		</div>
