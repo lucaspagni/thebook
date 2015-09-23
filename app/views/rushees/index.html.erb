@@ -38,7 +38,9 @@
 
                     <div class="rushee-info">
                         <h2><%= link_to rushee.name, rushee_path(rushee) %></h2>
-                        <p><%= rushee.bio[0, 200] %>...</p>
+                        <% if rushee.bio != nil %>
+                            <p><%= rushee.bio[0, 200] %>...</p>
+                        <% end %>
                     </div>
                     <div class="rushee-stats">
 

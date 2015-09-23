@@ -79,7 +79,9 @@
                 <li><strong>Hometown </strong><%= @rushee.hometown %></li>
                 <li><strong>Major </strong><%= @rushee.major %></li>
                 <li><strong>Campus Involvement </strong><%= @rushee.campus_involvement %></li>
-                <li><strong>Summary </strong><%= @rushee.bio %></li>
+                <% if rushee.bio != nil %>
+                    <li><strong>Summary </strong><%= @rushee.bio %></li>
+                <% end %>
             </ul>
 
             <div class="rushee-edit">
