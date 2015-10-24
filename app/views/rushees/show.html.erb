@@ -76,6 +76,13 @@
             <%= link_to( '<i class="fa fa-facebook"></i>Facebook Profile'.html_safe, @rushee.fb, html_options = {class: "rushee-facebook", target: "blank"} ) %>
 
             <ul class="rushee-specs">
+                <li><strong>Primary contact</strong> 
+                    <% if @rushee.ppoc == nil %>
+                        Nobody's got this kid?
+                    <% else %>
+                        <%= @rushee.ppoc %>
+                    <% end %>
+                </li>
                 <li><strong>Hometown </strong><%= @rushee.hometown %></li>
                 <li><strong>Major </strong><%= @rushee.major %></li>
                 <li><strong>Campus Involvement </strong><%= @rushee.campus_involvement %></li>

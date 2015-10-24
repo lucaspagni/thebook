@@ -36,6 +36,9 @@
                 <div class="new-rushee-input-item">
                     <i class="fa fa-facebook"></i><%= f.text_field :fb, :id=>"facebook-link", :placeholder => "Link to Facebook profile" %>
                 </div>
+                <div class="new-rushee-input-item">
+                    <i class="fa fa-phone"></i><%= f.text_field :ppoc, :id=>"ppoc", :placeholder => "Primary contact" %>
+                </div>
 
                 <%= f.label "Legacy?" %>
                 <%= f.check_box :legacy, :id=>"legacy" %><span>Yes</span>

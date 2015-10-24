@@ -11,7 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140917202016) do
+ActiveRecord::Schema.define(version: 20151024165225) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "comments", force: true do |t|
     t.datetime "created_at"
@@ -37,14 +40,14 @@ ActiveRecord::Schema.define(version: 20140917202016) do
     t.datetime "updated_at"
   end
 
-  add_index "impressions", ["controller_name", "action_name", "ip_address"], name: "controlleraction_ip_index"
-  add_index "impressions", ["controller_name", "action_name", "request_hash"], name: "controlleraction_request_index"
-  add_index "impressions", ["controller_name", "action_name", "session_hash"], name: "controlleraction_session_index"
-  add_index "impressions", ["impressionable_type", "impressionable_id", "ip_address"], name: "poly_ip_index"
-  add_index "impressions", ["impressionable_type", "impressionable_id", "request_hash"], name: "poly_request_index"
-  add_index "impressions", ["impressionable_type", "impressionable_id", "session_hash"], name: "poly_session_index"
-  add_index "impressions", ["impressionable_type", "message", "impressionable_id"], name: "impressionable_type_message_index"
-  add_index "impressions", ["user_id"], name: "index_impressions_on_user_id"
+  add_index "impressions", ["controller_name", "action_name", "ip_address"], name: "controlleraction_ip_index", using: :btree
+  add_index "impressions", ["controller_name", "action_name", "request_hash"], name: "controlleraction_request_index", using: :btree
+  add_index "impressions", ["controller_name", "action_name", "session_hash"], name: "controlleraction_session_index", using: :btree
+  add_index "impressions", ["impressionable_type", "impressionable_id", "ip_address"], name: "poly_ip_index", using: :btree
+  add_index "impressions", ["impressionable_type", "impressionable_id", "request_hash"], name: "poly_request_index", using: :btree
+  add_index "impressions", ["impressionable_type", "impressionable_id", "session_hash"], name: "poly_session_index", using: :btree
+  add_index "impressions", ["impressionable_type", "message", "impressionable_id"], name: "impressionable_type_message_index", using: :btree
+  add_index "impressions", ["user_id"], name: "index_impressions_on_user_id", using: :btree
 
   create_table "rushees", force: true do |t|
     t.string   "name"
@@ -75,16 +78,17 @@ ActiveRecord::Schema.define(version: 20140917202016) do
     t.boolean  "bid_tabled"
     t.boolean  "legacy"
     t.text     "bio"
+    t.string   "ppoc"
   end
 
-  add_index "rushees", ["cached_votes_down"], name: "index_rushees_on_cached_votes_down"
-  add_index "rushees", ["cached_votes_score"], name: "index_rushees_on_cached_votes_score"
-  add_index "rushees", ["cached_votes_total"], name: "index_rushees_on_cached_votes_total"
-  add_index "rushees", ["cached_votes_up"], name: "index_rushees_on_cached_votes_up"
-  add_index "rushees", ["cached_weighted_average"], name: "index_rushees_on_cached_weighted_average"
-  add_index "rushees", ["cached_weighted_score"], name: "index_rushees_on_cached_weighted_score"
-  add_index "rushees", ["cached_weighted_total"], name: "index_rushees_on_cached_weighted_total"
-  add_index "rushees", ["user_id"], name: "index_rushees_on_user_id"
+  add_index "rushees", ["cached_votes_down"], name: "index_rushees_on_cached_votes_down", using: :btree
+  add_index "rushees", ["cached_votes_score"], name: "index_rushees_on_cached_votes_score", using: :btree
+  add_index "rushees", ["cached_votes_total"], name: "index_rushees_on_cached_votes_total", using: :btree
+  add_index "rushees", ["cached_votes_up"], name: "index_rushees_on_cached_votes_up", using: :btree
+  add_index "rushees", ["cached_weighted_average"], name: "index_rushees_on_cached_weighted_average", using: :btree
+  add_index "rushees", ["cached_weighted_score"], name: "index_rushees_on_cached_weighted_score", using: :btree
+  add_index "rushees", ["cached_weighted_total"], name: "index_rushees_on_cached_weighted_total", using: :btree
+  add_index "rushees", ["user_id"], name: "index_rushees_on_user_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "provider"
@@ -109,7 +113,7 @@ ActiveRecord::Schema.define(version: 20140917202016) do
     t.datetime "updated_at"
   end
 
-  add_index "votes", ["votable_id", "votable_type", "vote_scope"], name: "index_votes_on_votable_id_and_votable_type_and_vote_scope"
-  add_index "votes", ["voter_id", "voter_type", "vote_scope"], name: "index_votes_on_voter_id_and_voter_type_and_vote_scope"
+  add_index "votes", ["votable_id", "votable_type", "vote_scope"], name: "index_votes_on_votable_id_and_votable_type_and_vote_scope", using: :btree
+  add_index "votes", ["voter_id", "voter_type", "vote_scope"], name: "index_votes_on_voter_id_and_voter_type_and_vote_scope", using: :btree
 
 end

@@ -190,13 +190,13 @@ class RusheesController < ApplicationController
     end
 
     def admin
-      if current_user.id <= 3
+      if current_user.id <= 3 or current_user.id.in?([45, 35, 26, 40, 6, 44, 56])
       end
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def rushee_params
-      params.require(:rushee).permit(:name, :age, :bio, :image, :hometown, :major, :campus_involvement, :fb, :legacy)
+      params.require(:rushee).permit(:name, :age, :bio, :image, :hometown, :major, :campus_involvement, :fb, :legacy, :ppoc)
     end
 end
 
