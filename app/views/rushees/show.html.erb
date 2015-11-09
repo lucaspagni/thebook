@@ -2,7 +2,9 @@
 
     <section class="rushee-info">
 
-        <% if @rushee.bid_dropped? %>
+        <% if @rushee.ripped? %>
+            <div class="rushee-status rip-corded">Ripped</div>
+        <% elsif @rushee.bid_dropped? %>
             <div class="rushee-status bid-dropped">Bid dropped!</div>
         <% elsif @rushee.bid_tabled? %>
             <div class="rushee-status bid-tabled">Bid tabled...</div>
@@ -103,6 +105,12 @@
                     <% if current_user.id <= 3 %>
                         <span>Rushee's rush status</span>
                         <ul class="rushee-edit-bid-status">
+
+                            <% if @rushee.ripped? %>
+                                <li><%= link_to 'Unripcord (man you fucked up)', unrip_rushee_path(@rushee) %></li>
+                            <% else %>
+                                <li><%= link_to 'RIPCORD', rip_rushee_path(@rushee) %></li>
+                            <% end %>
 
                             <% if @rushee.bid_offered? %>
                                 <li><%= link_to 'Undo bid given', unoffer_rushee_path(@rushee) %></li>

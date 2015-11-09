@@ -18,7 +18,9 @@
             <% @rushees.each do |rushee| %>
 
                 <div class="masonry-rushee">
-                    <% if rushee.bid_dropped? %>
+                    <% if rushee.ripped? %>
+                        <div class="rushee-status rip-corded">Ripped</div>
+                    <% elsif rushee.bid_dropped? %>
                         <div class="rushee-status bid-dropped">Bid dropped!</div>
                     <% elsif rushee.bid_tabled? %>
                         <div class="rushee-status bid-tabled">Bid tabled...</div>

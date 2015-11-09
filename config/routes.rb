@@ -12,6 +12,8 @@ Rails.application.routes.draw do
       match 'untable', to: "rushees#untabled", via: [:get, :post]
       match 'reject', to: "rushees#rejected", via: [:get, :post]
       match 'unreject', to: "rushees#unrejected", via: [:get, :post]
+      match 'rip', to: "rushees#ripped", via: [:get, :post]
+      match 'unrip', to: "rushees#unripped", via: [:get, :post]
     end
     resources :comments do
       member do

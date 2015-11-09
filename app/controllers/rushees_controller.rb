@@ -1,7 +1,7 @@
 class RusheesController < ApplicationController
   before_action :signed_in
   before_action :correct_user, only: [:edit, :update, :destroy]
-  before_action :admin, only: [:offered, :unoffered, :dropped, :undropped, :tabled, :untabled, :rejected, :unrejected]
+  before_action :admin, only: [:offered, :unoffered, :dropped, :undropped, :tabled, :untabled, :rejected, :unrejected, :ripped, :unripped]
   before_action :comments_ready, only: [:index, :recent, :top, :views, :comments]
 
 
@@ -36,6 +36,24 @@ class RusheesController < ApplicationController
 
   def edit
     @rushee = Rushee.find(params[:id])
+  end
+
+  def ripped
+    @rushee = Rushee.find(params[:id])
+    @rushee.ripped = true
+    @rushee.save
+    respond_to do |format|
+      format.html {redirect_to :back }
+    end
+  end
+
+  def unripped
+    @rushee = Rushee.find(params[:id])
+    @rushee.ripped = false
+    @rushee.save
+    respond_to do |format|
+      format.html {redirect_to :back }
+    end
   end
 
   def offered
